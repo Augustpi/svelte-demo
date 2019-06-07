@@ -2,6 +2,7 @@
 	import Navbar from './Navbar.svelte';
 	import Player from './Player.svelte';
 	import AddPlayer from './AddPlayer.svelte';
+	let foo = `this string contains some <strong>HTML!!!</strong>`;
 
 	let players = [
 		{
@@ -31,7 +32,11 @@
 <Navbar />
 
 <div class="container">
+
+	<p>{@html foo}</p>
+
 	<AddPlayer on:addplayer={addPlayer} />
+
 	{#if players.length === 0}
 	<p>No Player</p>
 	{:else}

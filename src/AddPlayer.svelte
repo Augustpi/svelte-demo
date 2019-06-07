@@ -9,6 +9,7 @@
     }
 
     const onSubmit = (e) => {
+        console.log(e)
         e.preventDefault();
         dispatch("addplayer", player);
         player = {
