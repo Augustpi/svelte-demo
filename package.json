@@ -1,6 +1,6 @@
 {
   "name": "svelte-app",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "homepage": "https://augustpi.github.io/svelte-demo",
   "devDependencies": {
     "gh-pages": "^2.0.1",
@@ -21,6 +21,6 @@
     "start": "sirv public",
     "start:dev": "sirv public --dev",
     "predeploy": "rollup -c",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d public"
   }
 }
