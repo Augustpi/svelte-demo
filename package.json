@@ -20,7 +20,7 @@
     "dev": "run-p start:dev autobuild",
     "start": "sirv public",
     "start:dev": "sirv public --dev",
-    "predeploy": "yarn run build",
+    "predeploy": "rollup -c",
     "deploy": "gh-pages -d build"
   }
 }
