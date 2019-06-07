@@ -4,12 +4,22 @@
 
   export let name;
   export let points;
+
+  let result = "";
+  
   let showControls = false;
 
   const addPoint = () => (points += 1);
   const removePoint = () => (points -= 1);
   const toggleControls = () => (showControls = !showControls);
   const onDelete = () => dispatch("removeplayer", name)
+
+  $: if (points >= 50) {
+    points = 50;
+    result = "done";
+  }
+  $: if (points <= 0) points = 0;
+
 </script>
 
 <style>
@@ -31,7 +41,7 @@
     <button class="btn btn-sm btn-danger" on:click={onDelete}>x</button>
 
   </h1>
-  <h3>Points: {points}</h3>
+  <h3>Points: {points === 50 ? result.toString(): points}</h3>
   {#if showControls}
     <button class="btn" on:click={addPoint}>+1</button>
     <button class="btn btn-dark" on:click={removePoint}>-1</button>

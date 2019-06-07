@@ -21,7 +21,7 @@
 
 	const addPlayer = (e) => {
 		const newPlayer = e.detail;
-		players = [...players, newPlayer];
+		players = [newPlayer, ...players];
 	};
 
 	const removePlayer = (e) => {
@@ -32,7 +32,7 @@
 <Navbar />
 
 <div class="container">
-
+	
 	<p>{@html foo}</p>
 
 	<AddPlayer on:addplayer={addPlayer} />
